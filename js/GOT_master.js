@@ -10,6 +10,7 @@
 
 	function openLightbox(){
 		//debugger;
+
 		let targetHouse = this.className.split(" ")[1];
 
 		//this gives us a lowercase house name -> the second class on 
@@ -22,8 +23,10 @@
 
 		video.src = `video/House-${targetVid}.mp4`;
 		lightbox.classList.add('lightbox-on');
-		video.load();
-		video.play();
+		video.setTimeout(1000)
+		// video.load();
+		// video.play();
+
 		
 
 	}
@@ -40,8 +43,13 @@
 		// move the banners to the left so that the current house banner is visible
 		const offSet = 600;
 		let currentOffset = this.dataset.offset * offSet;
-		
-		topBanners.style.right = currentOffset + "px";
+
+
+		TweenMax.to(topBanners,0.8, {
+		right: currentOffset
+
+	});
+		// topBanners.style.right = currentOffset + "px";
 		// sigils.forEach(sigil => sigil.addEventListener('click', openLightbox))
 
 		function delay(){
@@ -49,7 +57,7 @@
 	}
 	}
 
-	video.setTimeout(openLightbox,1000)
+	
 
 
 	//animate the banners at the top
