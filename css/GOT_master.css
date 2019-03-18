@@ -114,6 +114,15 @@ main {
 }
 
 
+.lightbox-close
+{
+	position: absolute;
+	color: white;
+	font-size: 2rem;
+	cursor: pointer;
+	right: 12px;
+}
+
 video {
 	width: 80%;
 	margin-top: 10%;
