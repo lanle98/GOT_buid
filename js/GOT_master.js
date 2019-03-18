@@ -6,6 +6,7 @@
 			lightbox = document.querySelector('.lightbox')
 			video = document.querySelector('video')
 			lbClose = document.querySelector(".lightbox-close")
+	    	topBanners = document.querySelector("#houseImages")
 
 	function openLightbox(){
 		//debugger;
@@ -23,6 +24,8 @@
 		lightbox.classList.add('lightbox-on');
 		video.load();
 		video.play();
+		
+
 	}
 
 	function closeLightBox(){
@@ -33,9 +36,24 @@
 		video.pause();
 	}
 
+	function animateBanners(){
+		// move the banners to the left so that the current house banner is visible
+		const offSet = 600;
+		let currentOffset = this.dataset.offset * offSet;
+		
+		topBanners.style.right = currentOffset + "px";
+		// sigils.forEach(sigil => sigil.addEventListener('click', openLightbox))
 
-	sigils.forEach(sigil => sigil.addEventListener('click', openLightbox))
+		function delay(){
+		
+	}
+	}
 
+	video.setTimeout(openLightbox,1000)
+
+
+	//animate the banners at the top
+	sigils.forEach(sigil => sigil.addEventListener('click', animateBanners))
 
 	lbClose.addEventListener('click', closeLightBox)
 	video.addEventListener("ended", closeLightBox)
