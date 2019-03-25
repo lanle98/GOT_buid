@@ -11,7 +11,7 @@
 	function openLightbox(){
 		//debugger;
 
-		let targetHouse = this.className.split(" ")[1];
+		let targetHouse = sigil.className.split(" ")[1];
 
 		//this gives us a lowercase house name -> the second class on 
 		//all of the shields
@@ -23,7 +23,7 @@
 
 		video.src = `video/House-${targetVid}.mp4`;
 		lightbox.classList.add('lightbox-on');
-		video.setTimeout(1000)
+		
 		// video.load();
 		// video.play();
 
@@ -48,14 +48,16 @@
 		TweenMax.to(topBanners,0.8, {
 		right: currentOffset
 
+
+
 	});
 		// topBanners.style.right = currentOffset + "px";
-		// sigils.forEach(sigil => sigil.addEventListener('click', openLightbox))
-
-		function delay(){
+		// sigils.forEach(sigil => sigil.addEventListener('click', ))
+		video.setTimeout(openLightbox,1000)
+	
 		
 	}
-	}
+
 
 	
 
