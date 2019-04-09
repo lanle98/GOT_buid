@@ -16,10 +16,10 @@
 		["LANNISTER", `House Lannister of Casterly Rock is one of the Great Houses of Westeros, one of its richest and most powerful families and oldest dynasties. It is also the current royal house of the Seven Kingdoms following the extinction of House Baratheon of King's Landing, which had been their puppet house anyway.`],
 	]
 
-	function openLightbox(){
+	function openLightbox(e){
 		//debugger;
 
-		let targetHouse = this.className.split(" ")[1];
+		let targetHouse = e.className.split(" ")[1];
 
 		//this gives us a lowercase house name -> the second class on 
 		//all of the shields
@@ -30,10 +30,14 @@
 		let targetVid = targetHouse.charAt(0).toUpperCase() + targetHouse.slice(1);
 
 		video.src = `video/House-${targetVid}.mp4`;
-		lightbox.classList.add('lightbox-on');
+
+		// delay the video to play
 		
-		// video.load();
-		// video.play();
+		lightbox.classList.add('lightbox-on')
+		
+		
+		video.load();
+		video.play();
 
 		
 
@@ -55,12 +59,18 @@
 		tagline.innerHTML = `House ${houseData[this.dataset.offset][0]}` ;
 		houseInfo.innerHTML = houseData[this.dataset.offset][1]
 
-		TweenMax.to(topBanners,0.8, {
-		right: currentOffset});
+		let animation = TweenMax.to(topBanners,1, {
+		ease:Linear.easeNone, right: currentOffset,
+		 onComplete:openLightbox,onCompleteParams:[this]}
+		);
+		console.log(this)
 		// topBanners.style.right = currentOffset + "px";
 
 
-		// change the text content on the page per house
+	
+	
+		
+		
 		
 		
 	

@@ -36,7 +36,7 @@ main {
 	overflow:hidden;
 }
 
-#houseImages { position:relative; width:4000px; transition: all .5s; }
+#houseImages { position:relative; width:4000px;}
 #houseImages img { float:left; }
 
 #bottomNav { margin-top:30px; }
@@ -132,4 +132,10 @@ video {
 .house-info
 {
 	color: white;
+	width: 500px;
+	margin: 0 auto;
+	padding: 40px;
+	font-size: 25px;
+	text-align: center;
+	line-height: 2em;
 }
