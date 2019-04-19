@@ -1,6 +1,6 @@
 # GOT_buid
 
-##Click on the shield of each house to show the description of that house
+## Click on the shield of each house to show the description of that house
 
 Build with
 
